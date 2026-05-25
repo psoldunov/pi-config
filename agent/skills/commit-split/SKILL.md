@@ -7,6 +7,9 @@ description: Splits the current diff into one Conventional Commits commit per co
 
 Turn a messy working tree into a clean linear history, then push.
 
+## Trigger
+- This skill is self-executing. Upon receipt, if there are changes in the working tree (checked via `git status`), proceed directly to **1. Capture the working tree state**.
+
 ## Preconditions
 
 1. Inside a git repository:
