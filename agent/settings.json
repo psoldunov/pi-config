@@ -8,5 +8,6 @@
 		"npm:pi-mcp-adapter"
 	],
 	"skills": ["~/.pi/agent/skills/"],
-	"defaultThinkingLevel": "high"
+	"defaultThinkingLevel": "high",
+	"enableSkillCommands": true
 }
