@@ -1,0 +1,21 @@
+{
+	"providers": {
+		"lmstudio": {
+			"api": "openai-completions",
+			"apiKey": "lm-studio",
+			"baseUrl": "http://localhost:1234/v1",
+			"models": [
+				{
+					"id": "qwen/qwen3.6-27b",
+					"input": ["text", "image"],
+					"contextWindow": 262144
+				},
+				{
+					"id": "google/gemma-4-26b-a4b",
+					"input": ["text", "image"],
+					"contextWindow": 262144
+				}
+			]
+		}
+	}
+}

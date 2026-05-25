@@ -1,0 +1,12 @@
+{
+  "name": "pi-extensions-local",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Local Pi extensions — types only, runtime provided by pi host",
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.75.5",
+    "typebox": "^1.1.38",
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  }
+}
