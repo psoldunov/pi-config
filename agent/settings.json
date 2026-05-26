@@ -1,7 +1,7 @@
 {
   "lastChangelogVersion": "0.75.5",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.5",
+  "defaultProvider": "lmstudio",
+  "defaultModel": "qwen/qwen3.6-27b",
   "packages": [
     "git:github.com/v2nic/pi-caveman",
     "npm:context-mode",
@@ -12,6 +12,5 @@
     "~/.pi/agent/skills/"
   ],
   "defaultThinkingLevel": "high",
-  "enableSkillCommands": true,
-  "hideThinkingBlock": true
+  "enableSkillCommands": true
 }
