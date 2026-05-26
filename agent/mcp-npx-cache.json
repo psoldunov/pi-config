@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "entries": {
+    "[\"npx\",\"-y\",\"mcp-remote\",\"https://mcp.linear.app/mcp\"]": {
+      "resolvedBin": "/Users/psoldunov/.npm/_npx/705d23756ff7dacc/node_modules/mcp-remote/dist/proxy.js",
+      "resolvedAt": 1779736161315,
+      "packageVersion": "0.1.38",
+      "isJs": true
+    }
+  }
+}
