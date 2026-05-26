@@ -14,6 +14,11 @@
 					"id": "google/gemma-4-26b-a4b",
 					"input": ["text", "image"],
 					"contextWindow": 262144
+				},
+				{
+					"id": "qwen/qwen3.6-35b-a3b",
+					"input": ["text", "image"],
+					"contextWindow": 262144
 				}
 			]
 		}
