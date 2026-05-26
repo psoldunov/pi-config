@@ -1,13 +1,17 @@
 {
-	"lastChangelogVersion": "0.75.5",
-	"defaultProvider": "lmstudio",
-	"defaultModel": "google/gemma-4-26b-a4b",
-	"packages": [
-		"git:github.com/v2nic/pi-caveman",
-		"npm:context-mode",
-		"npm:pi-mcp-adapter"
-	],
-	"skills": ["~/.pi/agent/skills/"],
-	"defaultThinkingLevel": "high",
-	"enableSkillCommands": true
+  "lastChangelogVersion": "0.75.5",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.5",
+  "packages": [
+    "git:github.com/v2nic/pi-caveman",
+    "npm:context-mode",
+    "npm:pi-mcp-adapter",
+    "npm:pi-cmux"
+  ],
+  "skills": [
+    "~/.pi/agent/skills/"
+  ],
+  "defaultThinkingLevel": "high",
+  "enableSkillCommands": true,
+  "hideThinkingBlock": true
 }
