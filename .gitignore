@@ -27,3 +27,9 @@ context-mode/sessions/
 *.log
 *.sqlite
 *.db
+
+# Local runtime data and auth tokens
+agent/auth.json
+agent/mcp-cache.json
+agent/mcp-npx-cache.json
+context-mode/
