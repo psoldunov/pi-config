@@ -158,7 +158,7 @@
         },
         {
           "name": "list_comments",
-          "description": "List comments on a Linear issue, project, initiative, document, or project milestone. Provide exactly one of `issueId`, `projectId`, `initiativeId`, `documentId`, or `milestoneId`. For projects and initiatives this returns both top-level discussion threads and inline description comments. Inline (anchored) comments carry a non-null `quotedText` set to the snippet of description text they reference.",
+          "description": "List comments on a Linear issue, project, initiative, document, or project milestone. Provide exactly one of `issueId`, `projectId`, `initiativeId`, `documentId`, or `milestoneId`. For issues, projects, and initiatives this returns both top-level discussion threads and inline description comments. Inline (anchored) comments carry a non-null `quotedText` set to the snippet of description text they reference.",
           "inputSchema": {
             "type": "object",
             "properties": {
@@ -1464,7 +1464,7 @@
         }
       ],
       "resources": [],
-      "cachedAt": 1779736398973
+      "cachedAt": 1780327986149
     }
   }
 }

@@ -1,12 +1,14 @@
 {
-  "lastChangelogVersion": "0.75.5",
-  "defaultProvider": "lmstudio",
-  "defaultModel": "qwen/qwen3.6-35b-a3b",
+  "lastChangelogVersion": "0.79.1",
+  "defaultProvider": "nvidia-nim",
+  "defaultModel": "moonshotai/kimi-k2.6",
   "packages": [
     "git:github.com/v2nic/pi-caveman",
     "npm:context-mode",
     "npm:pi-mcp-adapter",
-    "npm:pi-cmux"
+    "npm:pi-cmux",
+    "npm:pi-lens",
+    "npm:pi-nvidia-nim"
   ],
   "skills": [
     "~/.pi/agent/skills/"
