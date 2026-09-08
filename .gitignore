@@ -36,6 +36,8 @@ context-mode/
 
 # Pi
 pi-acp
+agent/git
+agent/npm
 agent/models-store.json
 agent/trust.json
 agent/models.json
