@@ -1,18 +1,14 @@
 {
-  "lastChangelogVersion": "0.79.1",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.3-codex-spark",
-  "packages": [
-    "git:github.com/v2nic/pi-caveman",
-    "npm:context-mode",
-    "npm:pi-mcp-adapter",
-    "npm:pi-cmux",
-    "npm:pi-lens",
-    "npm:pi-nvidia-nim"
-  ],
-  "skills": [
-    "~/.pi/agent/skills/"
-  ],
-  "defaultThinkingLevel": "high",
-  "enableSkillCommands": true
+	"lastChangelogVersion": "0.79.1",
+	"defaultProvider": "openai-codex",
+	"defaultModel": "gpt-5.6-sol",
+	"packages": [
+		"git:github.com/v2nic/pi-caveman",
+		"npm:context-mode",
+		"npm:pi-mcp-adapter",
+		"npm:pi-lens"
+	],
+	"skills": ["~/.pi/agent/skills/"],
+	"defaultThinkingLevel": "high",
+	"enableSkillCommands": true
 }
