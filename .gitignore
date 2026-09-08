@@ -33,3 +33,7 @@ agent/auth.json
 agent/mcp-cache.json
 agent/mcp-npx-cache.json
 context-mode/
+
+# Pi
+models-store.json
+agent/models-store.json
