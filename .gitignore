@@ -38,6 +38,7 @@ context-mode/
 pi-acp
 agent/git
 agent/npm
+agent/mcp-oauth
 agent/models-store.json
 agent/trust.json
 agent/models.json

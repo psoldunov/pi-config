@@ -1,8 +1,19 @@
 {
-	"mcpServers": {
-		"linear": {
-			"command": "npx",
-			"args": ["-y", "mcp-remote", "https://mcp.linear.app/mcp"]
-		}
-	}
+  "mcpServers": {
+    "linear": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.linear.app/mcp"
+      ]
+    },
+    "figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "auth": "oauth",
+      "lifecycle": "lazy",
+      "exposeResources": true,
+      "directTools": false
+    }
+  }
 }

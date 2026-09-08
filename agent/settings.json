@@ -6,7 +6,8 @@
     "git:github.com/v2nic/pi-caveman",
     "npm:context-mode",
     "npm:pi-mcp-adapter",
-    "npm:pi-lens"
+    "npm:pi-lens",
+    "npm:pi-figma-remote-auth"
   ],
   "skills": [
     "~/.pi/agent/skills/"
