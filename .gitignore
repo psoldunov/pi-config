@@ -35,5 +35,8 @@ agent/mcp-npx-cache.json
 context-mode/
 
 # Pi
-models-store.json
+pi-acp
 agent/models-store.json
+agent/trust.json
+agent/models.json
+agent/mcp-cache.json
