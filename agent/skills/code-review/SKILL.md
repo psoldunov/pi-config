@@ -1,6 +1,12 @@
 ---
 name: code-review
-description: Deep architectural code review of existing codebases — structural problems and concrete improvements. Use when user wants to review code, audit codebase, identify smells, refactor modules, improve abstractions. Triggers: "review my code", "look at my codebase", "is this good architecture", "how can I improve this", "refactor suggestions", "code quality", "module design", "is this too shallow". Also when user pastes code asking "what do you think?". Prefer structured review over ad-hoc.
+description: >-
+  Deep architectural code review of existing codebases — structural problems and concrete
+  improvements. Use when user wants to review code, audit codebase, identify smells, refactor
+  modules, improve abstractions. Triggers: "review my code", "look at my codebase", "is this good
+  architecture", "how can I improve this", "refactor suggestions", "code quality", "module design",
+  "is this too shallow". Also when user pastes code asking "what do you think?". Prefer structured
+  review over ad-hoc.
 ---
 
 # Code Review Skill
@@ -38,6 +44,7 @@ point out bugs or style issues, but to identify whether the code's *structure* i
 against the developer.
 
 Key concepts to apply:
+
 - **Deep modules**: small interface, large implementation. Hide complexity well.
 - **Shallow modules**: large interface relative to implementation. Leaky abstractions that force
   callers to know too much.
@@ -53,6 +60,7 @@ Key concepts to apply:
 ### Step 1: Orient
 
 Before reviewing individual files, get the lay of the land:
+
 - Ask for (or explore) the directory structure
 - Identify the tech stack and language(s)
 - Note the project type (API, frontend, library, CLI, full-stack, etc.)
@@ -65,12 +73,14 @@ ask them to share the relevant parts or a tree output.
 ### Step 2: Catalogue the modules
 
 For each significant module/file/class/function cluster, identify:
+
 - **Name and stated purpose**
 - **Interface size**: How many public methods/exports/props does it expose?
 - **Implementation complexity**: How much does it actually do?
 - **Dependencies**: What does it import/require? What imports it?
 
 Use this to classify each module as:
+
 - ✅ **Deep**: Does a lot behind a simple interface
 - ⚠️ **Shallow**: Thin wrapper, pass-through, or over-exposed internals
 - 🔴 **Leaky**: Forces callers to know about implementation details
@@ -80,22 +90,26 @@ Use this to classify each module as:
 Look for these specific patterns (see `references/smells.md` for full catalogue):
 
 **Module depth smells:**
+
 - Pass-through functions that just delegate without adding value
 - Modules that are just re-exports of other modules
 - Classes/objects where every private thing has a getter
 - Utility files that are just bags of unrelated functions
 
 **Cohesion smells:**
+
 - Modules that do two unrelated things (violates single-responsibility)
 - Functions that take a boolean flag to switch between two distinct behaviours
 - Files named `utils`, `helpers`, or `misc` that have grown beyond ~3 functions
 
 **Interface smells:**
+
 - Functions with 4+ positional parameters (should likely be an options object)
 - Functions that return different types depending on input
 - Callers that need to call 3+ methods in a specific order to use a module correctly
 
 **Coupling smells:**
+
 - Modules that import from many other modules in the same layer
 - Circular dependencies
 - Business logic bleeding into framework/infrastructure code (e.g. DB queries in route handlers)
@@ -107,13 +121,17 @@ Structure your output as follows:
 ---
 
 #### 🗺️ Overview
+
 Brief summary of what the codebase does, its structure, and overall impression.
 
 #### 📊 Module Depth Scorecard
+
 A table or list rating each major module/file as Deep / Shallow / Leaky, with a one-line reason.
 
 #### 🔍 Key Issues (prioritised)
+
 For each significant issue:
+
 - **What**: What is the problem
 - **Where**: File/function/line
 - **Why it matters**: The concrete cost (cognitive load, brittleness, coupling, etc.)
@@ -122,11 +140,14 @@ For each significant issue:
 Order issues by impact, not by file order. Lead with architectural issues, not style nits.
 
 #### ✅ What's working well
+
 Call out patterns done right. This is not just politeness — it helps the user know what to
 *preserve* during refactoring.
 
 #### 🏗️ Refactoring Roadmap (optional, for larger codebases)
+
 If the issues are significant, suggest a sequenced plan:
+
 1. Quick wins (low effort, high clarity gain)
 2. Module merges or splits
 3. Interface redesigns
@@ -148,6 +169,7 @@ If the issues are significant, suggest a sequenced plan:
 ## Language/Framework-Specific Notes
 
 ### TypeScript / JavaScript
+
 - Check for `any` types used to paper over design problems
 - Watch for React components that are doing data fetching + rendering + business logic
 - In Next.js: are Server Components being used appropriately, or is everything a Client Component?
@@ -155,6 +177,7 @@ If the issues are significant, suggest a sequenced plan:
 - Excessive use of `useEffect` for things that could be derived state is a cohesion smell
 
 ### General
+
 - If tests exist, check if they test behaviour or implementation. Implementation tests = tight
   coupling to internals = fragile.
 - Check if error handling is consistent or ad-hoc across modules.
