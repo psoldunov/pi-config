@@ -8,7 +8,8 @@
     "npm:pi-lens",
     "npm:pi-figma-remote-auth",
     "npm:pi-web-access",
-    "npm:pi-background-tasks"
+    "npm:pi-background-tasks",
+    "npm:@dietrichgebert/ponytail"
   ],
   "skills": [
     "~/.pi/agent/skills/"
