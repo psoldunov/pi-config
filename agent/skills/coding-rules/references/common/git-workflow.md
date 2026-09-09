@@ -10,8 +10,6 @@
 
 Types: feat, fix, refactor, docs, test, chore, perf, ci
 
-Note: Attribution is disabled in the source Claude configuration.
-
 ## Pull Request Workflow
 
 When creating PRs:

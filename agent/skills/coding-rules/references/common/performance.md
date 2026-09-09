@@ -2,19 +2,19 @@
 
 ## Model Selection Strategy
 
-**Haiku 4.5** (90% of Sonnet capability, 3x cost savings):
+**Fast, low-cost model:**
 
 - Lightweight agents with frequent invocation
 - Pair programming and code generation
 - Worker agents in multi-agent systems
 
-**Sonnet 4.6** (Best coding model):
+**Balanced coding model:**
 
 - Main development work
 - Orchestrating multi-agent workflows
 - Complex coding tasks
 
-**Opus 4.5** (Deepest reasoning):
+**High-reasoning model:**
 
 - Complex architectural decisions
 - Maximum reasoning requirements
@@ -36,8 +36,6 @@ Lower context sensitivity tasks:
 - Simple bug fixes
 
 ## Extended Thinking + Plan Mode
-
-Extended thinking is enabled by default in the source Claude configuration, reserving up to 31,999 tokens for internal reasoning.
 
 In Pi, control thinking with `/thinking`, Shift+Tab, or `defaultThinkingLevel` in `~/.pi/agent/settings.json`. Use the active host's planning workflow when one is available; Pi core has no built-in plan mode.
 

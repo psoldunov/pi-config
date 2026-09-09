@@ -2,7 +2,7 @@
 
 ## Specialist Roles
 
-Claude source agents live under `~/.claude/agents/`. In Pi, use a matching skill or brief an available sub-agent with the same role when supported.
+In Pi, use a matching skill or brief an available sub-agent with the required role when supported.
 
 | Agent | Purpose | When to Use |
 | --- | --- | --- |

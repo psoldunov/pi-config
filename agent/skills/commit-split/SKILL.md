@@ -8,14 +8,17 @@ description: Splits the current diff into one Conventional Commits commit per co
 Turn a messy working tree into a clean linear history, then push.
 
 ## Trigger
+
 - This skill is self-executing. Upon receipt, if there are changes in the working tree (checked via `git status`), proceed directly to **1. Capture the working tree state**.
 
 ## Preconditions
 
 1. Inside a git repository:
+
    ```bash
    git rev-parse --is-inside-work-tree
    ```
+
 2. Upstream branch exists, or the current branch tracks one. If not, this skill will set `-u origin <branch>` on first push.
 3. `gh auth status` succeeds (only needed if the repo has no remote yet — in that case redirect the user to the `init-repo` skill instead).
 
@@ -31,6 +34,7 @@ git log -5 --oneline
 ```
 
 Notes:
+
 - `??` lines = untracked files. Treat them like additions.
 - If the tree is clean, stop with "nothing to commit".
 - Note the current branch: `git rev-parse --abbrev-ref HEAD`.
@@ -108,11 +112,12 @@ EOF
 ```
 
 Rules for the message:
+
 - Subject in imperative mood: `add`, `fix`, `rename`, not `added` / `fixes`.
 - Subject ≤ 72 chars. No trailing period.
 - Scope is optional; use it when the change is localized to a clear module.
 - Body only when the diff doesn't speak for itself. No filler.
-- **Never** include `Co-Authored-By: Claude` or any tool attribution (this user has attribution disabled globally per their CLAUDE.md).
+- **Never** include agent or tool attribution.
 
 If staging a group fails because a file shows up unstaged after a partial-stage hunk split, fall back to whole-file commits — don't attempt `git add -p` interactively.
 
@@ -158,9 +163,11 @@ One line per new commit + upstream branch + remote URL (`git remote get-url orig
 
 - **Never** `git push --force` or `--force-with-lease`. If a rebase fails, hand it back to the user.
 - **Never** `git reset --hard`, `git clean -fd`, or `git checkout -- .` to "clean up" before splitting. Stash if needed:
+
   ```bash
   git stash push -u -m "commit-split safety stash"
   ```
+
 - **Never** rewrite history (`git rebase -i`, `commit --amend`) on commits that already exist before this invocation.
 - **Never** commit secrets, even if the user insists — make them confirm twice and document why.
 - If on `main` / `master` / `trunk` and the remote has branch-protection-style behavior (push rejected), surface the error verbatim and stop.
