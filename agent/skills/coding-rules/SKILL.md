@@ -1,36 +1,33 @@
 ---
 name: coding-rules
-description: On-demand rules for coding, tests, reviews, security, Git, hooks, APIs, and delegation.
+description: Personal coding standards for source changes/review; security audits; authorized commit/push/PR work; implementation research, architecture, data-access/API design; lifecycle hooks, permissions, task tracking; specialist roles/delegation; model/context choices; performance/build diagnosis. Applies to standalone actions/questions too; skip only unrelated prose/questions. Load only current-action cards; host authorization limits apply.
 ---
 
 # Coding Rules
 
-Apply host, repository, and task-specific instructions before these generic rules. Treat agent-specific tools, hooks, settings, shortcuts, and modes as intent-level guidance; use the closest Pi or host capability.
+Host, repository, and task instructions take precedence. Use available skills/tools for specialist roles; these rules never authorize delegation, Git actions, or external access on their own.
 
-## Progressive loading
+## Core — enough for ordinary work
 
-Never read every reference by default. Read only rows matching current work:
+- Research before new implementation: consult documentation, search for reusable code and proven approaches. Plan complex work with dependencies, risks, and phases; create planning documents when scope warrants them.
+- Never mutate existing objects; return updated copies. Organize small, cohesive modules by feature/domain. Aim for 200–400 lines/file, never exceed 800; functions <50 lines, nesting ≤4 levels. Use clear names and constants/config instead of hardcoded values.
+- Handle errors explicitly at every level; never swallow them. Give users clear messages and servers detailed diagnostic context without leaking sensitive data.
+- Validate untrusted input (including API responses and files) at system boundaries before processing; prefer schemas and fail fast. Never hardcode secrets: use environment variables or a secret manager, check required secrets at startup.
+- Features/fixes: mandatory TDD — write a test, run it failing, implement minimally, run it passing, refactor. Maintain ≥80% coverage; unit, integration, and critical-flow E2E tests are all required. For failures check isolation/mocks; fix implementation unless the test is wrong. Use available TDD guidance.
+- Review after coding using the host-permitted workflow. Resolve CRITICAL/HIGH issues; fix MEDIUM when possible. Verify naming, size, nesting, errors, constants, immutability, tests, and coverage before declaring done. Report checks not run; never claim unverified success.
 
-| Work | References |
+## Load only for the action now
+
+Core is complete without references. Read a card only BEFORE its trigger action, not because a later phase might need it. Most tasks need zero or one card at a time; this is not a cap when several risks apply. Reuse cards already in context. Never bulk-read this directory or follow a reference chain. If a required card is unavailable, report it.
+
+Paths are relative to this skill directory. Cards are independent; none requires another.
+
+| About to do | Read |
 | --- | --- |
-| Any source-code implementation, debugging, review, or refactor | `references/common/coding-style.md` |
-| New feature or bug fix | `references/common/testing.md`, `references/common/development-workflow.md` |
-| Tests only | `references/common/testing.md` |
-| Commit, push, or pull request | `references/common/git-workflow.md`, `references/common/security.md` |
-| Security-sensitive boundary, auth, secrets, input, API, or database work | `references/common/security.md` |
-| Performance work or model/context strategy | `references/common/performance.md` |
-| New architecture, repository abstraction, or API response shape | `references/common/patterns.md` |
-| Hooks, permissions, or task-tracking integration | `references/common/hooks.md` |
-| Delegation or specialist-agent workflow | `references/common/agents.md` |
-
-For TypeScript or JavaScript work, also load only matching language references:
-
-| Work | References |
-| --- | --- |
-| Any TS/JS implementation, debugging, review, or refactor | `references/typescript/coding-style.md` |
-| TS/JS tests | `references/typescript/testing.md` |
-| TS/JS design or implementation patterns | `references/typescript/patterns.md` |
-| React hooks | `references/typescript/hooks.md` |
-| TS/JS input, auth, API, secret, or DOM security | `references/typescript/security.md` |
-
-Follow links from a loaded reference only when current task needs linked topic. If a required reference cannot be read, report it instead of silently skipping it.
+| Edit/review JS/TS source (including tests) | `references/typescript.md` |
+| Change/audit auth, endpoints, SQL, HTML, or secret handling; respond to a security issue | `references/security.md` |
+| Commit, push, or prepare a PR (when authorized) | `references/git.md` |
+| Research a new implementation, choose architecture, data-access or API contracts | `references/design.md` |
+| Implement lifecycle hooks, permission gates, or task tracking (NOT React hooks) | `references/hooks.md` |
+| Choose specialist roles or delegate work (when permitted) | `references/agents.md` |
+| Choose model/context strategy, diagnose performance or build failures | `references/performance.md` |
