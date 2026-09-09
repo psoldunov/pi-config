@@ -21,3 +21,7 @@ This document defines the default behavioral configurations for agents operating
 ## Coding Rules
 
 Generic coding rules use progressive disclosure through the `coding-rules` skill. Load only references relevant to the current task; do not preload the full rule set.
+
+## Git Actions
+
+Do not commit, push, or create a pull request unless the user explicitly requests it. A request to edit files does not grant permission for those Git actions.
