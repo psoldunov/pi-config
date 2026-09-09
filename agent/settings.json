@@ -1,15 +1,18 @@
 {
-	"lastChangelogVersion": "0.85.1",
-	"defaultProvider": "openai-codex",
-	"defaultModel": "gpt-5.6-sol",
-	"packages": [
-		"git:github.com/v2nic/pi-caveman",
-		"npm:pi-mcp-adapter",
-		"npm:pi-lens",
-		"npm:pi-figma-remote-auth"
-	],
-	"skills": ["~/.pi/agent/skills/"],
-	"defaultThinkingLevel": "high",
-	"enableSkillCommands": true,
-	"theme": "dark"
+  "lastChangelogVersion": "0.85.1",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-sol",
+  "packages": [
+    "git:github.com/v2nic/pi-caveman",
+    "npm:pi-mcp-adapter",
+    "npm:pi-lens",
+    "npm:pi-figma-remote-auth",
+    "npm:pi-web-access"
+  ],
+  "skills": [
+    "~/.pi/agent/skills/"
+  ],
+  "defaultThinkingLevel": "high",
+  "enableSkillCommands": true,
+  "theme": "dark"
 }
