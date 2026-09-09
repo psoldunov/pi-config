@@ -5,7 +5,7 @@ description: On-demand rules for coding, tests, reviews, security, Git, hooks, A
 
 # Coding Rules
 
-Apply host, repository, and task-specific instructions before these generic rules. Treat Claude-specific tools, agents, hooks, settings, shortcuts, and modes as intent-level guidance; use the closest Pi or host capability.
+Apply host, repository, and task-specific instructions before these generic rules. Treat agent-specific tools, hooks, settings, shortcuts, and modes as intent-level guidance; use the closest Pi or host capability.
 
 ## Progressive loading
 
