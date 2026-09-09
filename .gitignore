@@ -36,6 +36,7 @@ context-mode/
 
 # Pi
 pi-acp
+web-search-cache
 agent/git
 agent/npm
 agent/mcp-oauth
