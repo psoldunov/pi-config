@@ -22,6 +22,10 @@ This document defines the default behavioral configurations for agents operating
 
 Generic coding rules use progressive disclosure through the `coding-rules` skill. Load only references relevant to the current task; do not preload the full rule set.
 
+## Documentation First
+
+When writing code, do not rely on training data for APIs, libraries, frameworks, or tooling. Always consult documentation first. Start with bundled or local documentation; if none exists or it is insufficient, consult Context7.
+
 ## Git Actions
 
 Do not commit, push, or create a pull request unless the user explicitly requests it. A request to edit files does not grant permission for those Git actions.
