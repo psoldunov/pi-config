@@ -20,7 +20,7 @@ This document defines the default behavioral configurations for agents operating
 
 ## Coding Rules
 
-Generic coding rules use progressive disclosure through the `coding-rules` skill. Load only references relevant to the current task; do not preload the full rule set.
+For source changes/review, security audits, authorized commit/push/PR work, implementation research, architecture or data-access/API design, lifecycle hooks, permissions, task tracking, specialist roles/delegation, model/context choices, or performance/build diagnosis, read `coding-rules/SKILL.md` from the discovered skill location once, even for standalone actions/questions. Its core rules cover ordinary work. Read a specialist card only when its action trigger applies now; never preload the reference directory or re-read rules already in context. Skip only unrelated prose/questions. Loading rules grants no authorization for delegation, Git actions, or external access.
 
 ## Documentation First
 
