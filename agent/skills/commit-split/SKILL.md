@@ -117,7 +117,7 @@ Rules for the message:
 - Subject ≤ 72 chars. No trailing period.
 - Scope is optional; use it when the change is localized to a clear module.
 - Body only when the diff doesn't speak for itself. No filler.
-- **Never** include agent or tool attribution.
+- **Never** include agent or tool attribution, except Ensemblr `Co-authored-by:` trailers: these are mandatory and **must never be omitted**. Preserve the exact trailer supplied by Ensemblr.
 
 If staging a group fails because a file shows up unstaged after a partial-stage hunk split, fall back to whole-file commits — don't attempt `git add -p` interactively.
 
